@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script type="module" src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebOS</title>
@@ -9,15 +11,13 @@
 
 <body
     style="background-image: url('/oss.jpg'); margin:0; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
-    <div id="window" style=" position: absolute; background-color: rgba(128, 128, 128, 0.311); border: 2px solid black; top: 50%; left: 50%;
-
-transform: translate(-50%, -50%); width: fit-content; border-radius: 5px;">
-        <div id="welcomeopen"
-            style="width: 16px; height: 16px; position: absolute; top: 20px; right: 10px; cursor: pointer; background-color: #7a0000; border-radius: 16px; border: solid 1px rgba(0, 0, 0, 0.25); margin-left: 6px;">
+    <div id="window" class="window">
+        <div id="welcomeopen" class="welcometab">
+            
         </div>
 
-        <img src="/batman-icon-png-12040.png" id="welcomeclose"
-            style=" cursor: pointer; width: 100px; height: 100px; margin-top: -10px; margin-bottom: -5px; object-fit: cover;" />
+        <img src="/batman-icon-png-12040.png" id="welcomeclose" class="closebutton"
+           />
         <h1 style="font-family:impact; margin: 4px; margin-top: -20px;">BatOS</h1>
         <p id="welcometext" style="margin: 4px;font-family: Helvetica;">This is <i>Batman</i> OS for the fans of Batman!
         </p>
