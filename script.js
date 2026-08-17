@@ -29,3 +29,18 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
+var welcomescreen = document.querySelector("#window");
+function closewelcomescreen(element) {
+    element.style.display = "none";
+}
+function openwelcomescreen(element) {
+    element.style.display = "flex";
+}
+var welcomeclose = document.querySelector("#welcomeclose");
+var welcomeopen = document.querySelector("#welcomeopen");
+welcomeclose.addEventListener("click", function () {
+    closewelcomescreen(welcomescreen);
+});
+welcomeopen.addEventListener("click", function () {
+    openwelcomescreen(welcomescreen);
+});
