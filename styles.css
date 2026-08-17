@@ -1,22 +1,45 @@
-.closebutton {
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    margin-top: -10px;
-    margin-bottom: -5px;
-    object-fit: cover;
 
+
+:root {
+    --bat-black: #0d0d0d;
+    --bat-panel: #17171a;
+    --bat-yellow: #ffcc00;
+    --bat-red: #e10600;
+    --bat-ink: #000000;
+    --bat-paper: #f4f1ea;
+    --font-display: 'Anton', impact, sans-serif;
+    --font-body: 'Special Elite', 'Courier New', monospace;
 }
+
+/* Halftone dot texture behind every window, like comic-book screentone */
 .window {
     position: absolute;
-    background-color: rgba(128, 128, 128, 0.311);
-    border: 2px solid black;
+    background-color: var(--bat-panel);
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 10px 10px;
+    border: 3px solid var(--bat-ink);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+   
     width: fit-content;
-    border-radius: 5px;
+    border-radius: 6px;
+   
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.6);
 }
+
+
+#window h1,
+#window p {
+    color: var(--bat-paper);
+}
+#window h1 {
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+}
+#window p {
+    font-family: var(--font-body);
+}
+
 .welcometab {
     width: 16px;
     height: 16px;
@@ -24,8 +47,121 @@
     top: 20px;
     right: 10px;
     cursor: pointer;
-    background-color: #7a0000;
+    background-color: var(--bat-red);
     border-radius: 16px;
     border: solid 1px rgba(0, 0, 0, 0.25);
     margin-left: 6px;
+}
+
+.closebutton {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin-top: -10px;
+    margin-bottom: -5px;
+    object-fit: cover;
+}
+
+.selected {
+    background-color: rgba(255, 204, 0, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px var(--bat-yellow);
+}
+
+
+.closebutton.small {
+    width: 16px;
+    height: 16px;
+    background-color: var(--bat-red);
+    border-radius: 50%;
+    border: 2px solid var(--bat-ink);
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+.closebutton.small:hover {
+    transform: scale(1.2);
+}
+
+.windowheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    cursor: move;
+    background-color: var(--bat-ink);
+    background-image: repeating-linear-gradient(
+        135deg,
+        rgba(255, 204, 0, 0.06) 0px,
+        rgba(255, 204, 0, 0.06) 2px,
+        transparent 2px,
+        transparent 10px
+    );
+    border-bottom: 3px solid var(--bat-ink);
+    border-radius: 3px 3px 0 0;
+}
+
+.headertext {
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+    color: var(--bat-yellow);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.app-body {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bat-panel);
+    width: 520px;
+    height: 420px;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 160px;
+    flex-shrink: 0;
+    background-color: var(--bat-ink);
+    overflow-y: auto;
+    border-right: 3px solid var(--bat-ink);
+}
+
+.sidebar-item {
+    padding: 12px;
+    cursor: pointer;
+    color: var(--bat-paper);
+    font-family: var(--font-body);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.15s ease, border-left 0.15s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 204, 0, 0.1);
+    border-left: 3px solid var(--bat-yellow);
+}
+
+.note-content {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    color: var(--bat-paper);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+
+.sidebar::-webkit-scrollbar,
+.note-content::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb,
+.note-content::-webkit-scrollbar-thumb {
+    background-color: var(--bat-yellow);
+    border-radius: 4px;
+}
+.sidebar::-webkit-scrollbar-track,
+.note-content::-webkit-scrollbar-track {
+    background-color: transparent;
 }
