@@ -150,7 +150,51 @@
     font-family: var(--font-body);
     line-height: 1.6;
 }
+.jarv-body {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    background-color: var(--bat-ink);
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+}
 
+.jarv-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+.jarv-caption {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    margin: 0;
+    padding: 4px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--bat-yellow);
+    font-family: var(--font-body);
+    font-size: 12px;
+    border-radius: 4px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+.jarv-openlink {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--bat-yellow);
+    color: var(--bat-ink);
+    font-family: var(--font-body);
+    font-size: 12px;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 2px solid var(--bat-ink);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
 
 .sidebar::-webkit-scrollbar,
 .note-content::-webkit-scrollbar {

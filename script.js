@@ -1,4 +1,3 @@
-
 var selectedIcon = undefined;
 
 
@@ -36,8 +35,7 @@ function handleIconTap(element) {
 function dragElement(elmnt) {
     var x1 = 0, y1 = 0, x2 = 0, y2 = 0;
 
-    // If a header exists (id = "<windowId>header"), only dragging the
-    // header moves the window. Otherwise the whole window is draggable.
+
     if (document.getElementById(elmnt.id + "header")) {
         document.getElementById(elmnt.id + "header").onmousedown = startDragging;
     } else {
@@ -139,6 +137,8 @@ function initializeWindow(id) {
 
 initializeWindow("window");
 initializeWindow("casefiles");
+
+initializeWindow("jarv");
 
 
 var content = [

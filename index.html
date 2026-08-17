@@ -68,9 +68,42 @@
             <img src="/icon.png" style="width: 64px; height: 64px; border-radius: 16px;">
             <p style=" font-family: Helvetica; font-weight: bold; margin: 3px; color: #f7f7f7;">Case Files</p>
         </div>
+        <div onclick="handleIconTap(this)" data-window="jarv"
+            style="text-align: center; padding: 16px; filter: drop-shadow(0 0 4px black); width: fit-content;">
+            <img src="/jarv.png" style="width: 64px; height: 64px; border-radius: 16px;">
+            <p style=" font-family: Helvetica; font-weight: bold; margin: 3px; color: #f7f7f7;">3D Jarv</p>
+        </div>
 
   
     </div>
+  
+
+    <div class="window" id="jarv" style="display: none;">
+
+        <div class="windowheader" id="jarvheader">
+            <div class="closebutton small" id="jarvclose"></div>
+            <p class="headertext">3D Jarv</p>
+            <div style="width: 16px; height: 16px;"></div>
+        </div>
+
+        <div class="jarv-body">
+            <p class="jarv-caption">Move your hand to move the sphere</p>
+
+            <iframe
+                src="https://3djarv.netlify.app/"
+                title="3D Jarv"
+                class="jarv-frame"
+                loading="lazy"
+                allow="camera"
+            ></iframe>
+
+            
+            <a href="https://3djarv.netlify.app/" target="_blank" rel="noopener" class="jarv-openlink">
+                Open in new tab ↗
+            </a>
+        </div>
+    </div>
+    
 
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
